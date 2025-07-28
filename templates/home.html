@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <title>Baires Candy Box - Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/CSS/home.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='/Imagenes/Logo.png') }}" alt="">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li id="productos">Productos</li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto">Como Comprar</a></li>
+                <li><a href="#contacto">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+        <div class="container-user-carrito">
+            <div class="usuario">
+                <img src="{{url_for('static', filename='/Imagenes/Iconos/usuario.svg')}}" alt="">
+            </div>
+            <div class="carrito">
+                <img src="{{url_for('static', filename='/Imagenes/Iconos/carritocompra.svg')}}" alt="">
+            </div>
+        </div>
+    </header>
+    <div class="menu-productos" id="menu-productos">
+        <h2>Boxes</h2>
+        <ul>
+            <li><a href="/productos/chocolates">Candy Box</a></li>
+            <li><a href="/productos/bombones">Activity Box</a></li>
+            <li><a href="/productos/otros">Plantillas Digitales</a></li>
+        </ul>
+
+    </div>
+    <section id="container-inicio">
+        <img src="{{ url_for('static', filename='/Imagenes/BoxChocolates/IMG_4617.JPG') }}" alt="">
+
+    </section>
+    <section id="container-productos">
+        <h1>Productos Destacados</h1>
+        <div class="container-cards">
+            <div class="card candybox">
+                <img src="{{ url_for('static', filename='/Imagenes/BoxChocolates/IMG_4617.JPG') }}" alt="">
+                <h2>Candy Box</h2>
+            </div>
+            <div class="card activitybox">
+                <img src="{{ url_for('static', filename='/Imagenes/BoxChocolates/IMG_4774.JPG') }}" alt="">
+                <h2>Activity Box</h2>
+            </div>
+            <div class="card plantillasdigitales">
+                <img src="{{ url_for('static', filename='/Imagenes/BoxChocolates/IMG_4769.JPG') }}" alt="">
+                <h2>Plantillas Digitales</h2>
+            </div>
+        </div>
+    </section>
+    <section id="informacion">
+        <div class="envios info">
+            <div>
+                <img src="{{url_for('static', filename='/Imagenes/Iconos/camion.svg')}}" alt="">
+                <h2>Envios a todo el país</h2>
+            </div>
+
+        </div>
+        <hr>
+        <div class="perzonalizados info">
+            <div>
+                <img src="{{url_for('static', filename='/Imagenes/Iconos/perzonalizado.svg')}}" alt="">
+                <h2>Pedidos 100% personalizados</h2>
+            </div>
+
+        </div>
+        <hr>
+        <div class="seguros info">
+            <div>
+                <img src="{{url_for('static', filename='/Imagenes/Iconos/seguro.svg')}}" alt="">
+                <h2>Página Segura</h2>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="contacto">
+        <div class="container-form">
+            <div class="mail">
+                <h2>Envianos un Mail</h2>
+                <form action="/enviar" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+
+            </div>
+            <div class="contactos">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><span><img src="{{url_for('static', filename='/Imagenes/Iconos/ubicacion.svg')}}" alt=""></span> San Cristóbal, Capital Federal, Buenos Aires</li>
+                    <li><span><img src="{{url_for('static', filename='/Imagenes/Iconos/telefono.svg')}}" alt=""></span> +54 9 11 1234-5678</li>
+                    <li><span><img src="{{url_for('static', filename='/Imagenes/Iconos/email.png')}}" alt=""></span> bairescandybox@gmail.com</li>
+                </ul>
+
+            </div>
+            <div class="triangulo"></div>
+        </div>
+    <footer>
+
+    </footer>
+    <script src="{{ url_for('static', filename='/JS/home.js') }}"></script>
+</body>
+</html>
+<!-- 
+#7a2013
+#fcf6f6 -->
