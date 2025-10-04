@@ -607,5 +607,6 @@ def reset_password_submit(token):
 
 if __name__ == '__main__':
     
-    app.run(debug=True, port=5500)
+    port = int(os.environ.get("PORT", 5000))  # usa el puerto de Render o 5000 por defecto
+    app.run(host="0.0.0.0", port=port)
    
