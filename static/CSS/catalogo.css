@@ -1,0 +1,273 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#catalogo {
+  height: auto;
+  width: 100%;
+  padding: 0.625em 8.125em;
+  margin-top: 8.75em;
+}
+
+.container-catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#catalogo h2 {
+  color: #5e3d1c;
+  font-family: "dancing";
+  font-size: 2.5em;
+}
+
+.no-hay-producto {
+  font-family: "Bree Serif", serif;
+  font-size: 1em;
+  color: black;
+}
+
+.card-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  width: 15.625em;
+  overflow: hidden;
+  height: 18.75em;
+  border: 0.125em solid #8a8a8a7b;
+  border-radius: 0.313em;
+  -webkit-border-radius: 0.313em;
+  -moz-border-radius: 0.313em;
+  -ms-border-radius: 0.313em;
+  -o-border-radius: 0.313em;
+  margin-left: 1.875em;
+  margin-top: 1.875em;
+}
+
+.card-producto img {
+  width: 15.625em;
+  object-fit: cover;
+  object-position: center;
+  height: 10.625em;
+  border-top-right-radius: 0.313em;
+  border-top-left-radius: 0.313em;
+}
+
+.container-catalogo a {
+  text-decoration: none;
+  color: black;
+  font-family: "Bree Serif", serif;
+}
+.producto-nombre {
+  font-size: 1.1em;
+  margin: 0.313em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto-precio {
+  font-size: 1.2em;
+  margin: 0.313em 0;
+}
+
+.card-producto button {
+  width: 9.375em;
+  height: 2.063em;
+  font-family: "Bree Serif", serif;
+  color: black;
+  background-color: #ffead9;
+  border: 0.063em solid black;
+  border-radius: 0.313em;
+  margin-top: 0.188em;
+  -webkit-border-radius: 0.313em;
+  -moz-border-radius: 0.313em;
+  -ms-border-radius: 0.313em;
+  -o-border-radius: 0.313em;
+  cursor: pointer;
+}
+
+.card-producto-texto {
+  width: 15.625em;
+  height: 100%;
+  padding: 0 0.938em;
+}
+
+.spinner {
+  border: 0.5em solid #f3f3f3;
+  border-top: 0.5em solid #ff8ece;
+  border-radius: 50%;
+  width: 3.75em;
+  height: 3.75em;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader {
+  font-family: "Bree Serif", serif;
+}
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+  #catalogo {
+  height: auto;
+  width: 100vw;
+  padding: 0;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-catalogo {
+  width: 100vw;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#catalogo h2 {
+  color: #5e3d1c;
+  font-family: "dancing";
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.no-hay-producto {
+  font-family: "Bree Serif", serif;
+  font-size: 1em;
+  text-align: center;
+  color: black;
+}
+
+.card-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 10em;
+  overflow: hidden;
+  height: 17em;
+  border: 0.125em solid #8a8a8a7b;
+  border-radius: 0.313em;
+  -webkit-border-radius: 0.313em;
+  -moz-border-radius: 0.313em;
+  -ms-border-radius: 0.313em;
+  -o-border-radius: 0.313em;
+  margin-top: 0.8em;
+}
+
+
+.container-catalogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    justify-items: center;
+    align-items: stretch;
+    width: 100%;
+  }
+  .card-producto {
+    width: 75%;
+    margin-left: 0;
+    margin-top: 0.7em;
+  }
+
+.card-producto img {
+  width: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  height: 11em;
+  margin-top: -0.5em;
+  border-top-right-radius: 0.313em;
+  border-top-left-radius: 0.313em;
+  
+}
+
+.container-catalogo a {
+  text-decoration: none;
+  color: black;
+  font-family: "Bree Serif", serif;
+}
+.producto-nombre {
+  font-size: 0.8em;
+  margin: 0.3em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto-precio {
+  font-size: 0.9em;
+  margin: 0.3em 0;
+}
+
+.card-producto button {
+  width: 9.375em;
+  height: 2.063em;
+  font-family: "Bree Serif", serif;
+  color: black;
+  background-color: #ffead9;
+  border: 0.063em solid black;
+  border-radius: 0.313em;
+  margin-top: 0.1em;
+  -webkit-border-radius: 0.313em;
+  -moz-border-radius: 0.313em;
+  -ms-border-radius: 0.313em;
+  -o-border-radius: 0.313em;
+  cursor: pointer;
+}
+
+.card-producto-texto {
+  width: 15.625em;
+  height: 100%;
+  padding: 0 0.938em;
+}
+}
+
+/* FONTS */
+.bree-serif-regular {…}
+.bree-serif-bold {…}
+
+
+
+
+.bree-serif-regular {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.bree-serif-bold {
+  font-family: "Bree Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}

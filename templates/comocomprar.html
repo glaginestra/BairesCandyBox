@@ -1,0 +1,49 @@
+{% extends 'layout.html'%} {%block title%} BairesCandyBox - Como Comprar
+{%endblock%} {%block content%}
+<section id="como-comprar">
+  <h1>¿Cómo Comprar?</h1>
+  <div class="container-como-comprar">
+    <div class="paso paso1">
+      <p>
+        <span><h2>Paso 1:</h2></span>
+        En primer lugar debes consultar disponibilidad para la fecha requerida.
+      </p>
+    </div>
+    <div class="paso paso2">
+      <p>
+        <span><h2>Paso 2:</h2></span> Recibo pedidos con 10-15 dias de
+        anticipacion.
+      </p>
+    </div>
+    <div class="paso paso3">
+      <p>
+        <span><h2>Paso 3:</h2></span> Comprar las unidades que necesites por
+        esta página.
+      </p>
+    </div>
+    <div class="paso paso4">
+      <p>
+        <span><h2>Paso 4:</h2></span>
+        Una vez realizada la compra, coordinamos los detalles de la
+        personalización, y luego te envio una imagen de muestra para que veas
+        como queda el souvenir terminado.
+      </p>
+    </div>
+    <div class="paso paso5">
+      <p>
+        <span><h2>Paso 5:</h2></span>
+        Una vez que me das tu conformidad, realizo todas las impresiones y el
+        armado de todo tu trabajo.
+      </p>
+    </div>
+    <div class="paso paso6">
+      <p>
+        <span><h2>Paso 6:</h2></span> Coordinamos envio o retiro.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='/JS/home.js') }}"></script>
+{% endblock %}

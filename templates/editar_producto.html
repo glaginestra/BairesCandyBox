@@ -1,0 +1,36 @@
+{%extends 'layout.html'%}
+
+{% block extra_css %}    
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/administrador.css') }}"> 
+{% endblock %}
+
+
+{% block title %}BairesCandyBox - Administración{% endblock %}
+
+
+{% block content %}
+<section id="administrador-editar">
+    <h2>Administración de Productos</h2>
+    <h3>Editar Producto</h3>
+    <div class="container-administrador-editar">
+        <form action="/actualizar_producto/{{producto.id}}" method="POST">
+            <h3>Nombre</h3>
+            <input type="text" name="nombre" id="nombre" value="{{producto.nombre}}">
+            <h3>Precio</h3>
+            <input type="number" name="precio" id="precio" value="{{producto.precio}}">
+            <h3>Descripción</h3>
+            <textarea name="descripcion" id="descripcion">{{producto.descripcion}}</textarea>
+            <button type="submit">Actualizar</button>
+        </form>
+        
+
+    </div>
+</section>
+
+
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/administrador.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

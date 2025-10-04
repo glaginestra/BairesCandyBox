@@ -1,0 +1,37 @@
+{%extends 'layout.html'%}
+
+{% block extra_css %}    
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/administrador.css') }}"> 
+{% endblock %}
+
+
+{% block title %}BairesCandyBox - Administración{% endblock %}
+
+
+{% block content %}
+{% with mensajes = get_flashed_messages(with_categories=true) %}
+    {% if mensajes %}
+      {% for categoria, mensaje in mensajes %}
+        <div class="alert {{ categoria }}">{{ mensaje }}</div>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<section id="administrador">
+    <h2>Panel de Administración</h2>
+    <div class="container-administrador">
+        <a href="/admin_producto"><button>Productos Pubicados</button></a>
+        <a href="/nuevo_producto"><button>Agregar Producto</button></a>
+        <a href="/usuarios_registrados"><button>Usuarios Registrados</button></a>
+        <a href="/pedidos"><button>Pedidos</button></a>
+
+    </div>
+</section>
+
+
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/administrador.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{%extends 'layout.html'%}
+
+{% block title %}BairesCandyBox - Usuarios Registrados{% endblock %}
+
+{% block content %}
+    <section id="usuarios_registrados">
+        <h1>Usuarios Registrados</h1>
+        <div class="container-usuarios-registrados">
+            <table>
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Email Verificado</th>
+                    <th>Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                    <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.email_verificado }}</td>
+                    <td>{{ usuario.rol }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='/JS/home.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,96 @@
+{%extends 'layout.html'%}
+
+{% block extra_css %}    
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/administrador.css') }}"> 
+{% endblock %}
+
+
+{% block title %}BairesCandyBox - Administración{% endblock %}
+
+
+{% block content %}
+<section id="administrador-productos">
+    <h2>Administración de Productos</h2>
+    <h2 style="margin-bottom: 1.25em;">Productos Publicados</h2>
+    <div class="container-administrador-productos">
+        <h3 style="margin-bottom: 0.625em;margin-top: 0.625em;">Candy Box</h3>
+        {% for candybox in productos_candybox %}
+        <div class="admin-prod">
+            <div class="container-img">
+                <img src="{{url_for('static', filename='uploads/'+candybox.imagen_principal)}}" alt="">
+            </div>
+            <div>
+                <h3>Nombre</h3>
+                <h4 class="admin-prod-name">{{candybox.nombre}}</h4>
+            </div>
+            <div>
+                <h3>Precio</h3>
+                <h4>${{ "{:,.2f}".format(candybox.precio).replace(",", "X").replace(".", ",").replace("X", ".") }}</h4>
+            </div>
+            <div>
+                <h3>Descripción</h3>
+                <h4 class="admin-prod-desc">{{candybox.descripcion}}</h4>
+            </div>
+            <a href="/editar_producto/{{candybox.id}}" ><button class="btn-editar" id="boton-editar">Editar</button></a>
+            <a href="/eliminar_producto/{{candybox.id}}"><button class="btn-eliminar">Eliminar</button></a>
+        </div>
+        
+        {% endfor %}
+        <h3 style="margin-bottom: 0.625em;margin-top: 1.25em;">Activity Box</h3>
+        {% for activity in productos_activity %}
+        <div class="admin-prod">
+            <div class="container-img">
+                <img src="{{url_for('static', filename=activity.imagen_principal)}}" alt="">
+            </div>
+            <div>
+                <h3>Nombre</h3>
+                <h4 class="admin-prod-name">{{activity.nombre}}</h4>
+            </div>
+            <div>
+                <h3>Precio</h3>
+                <h4>${{ "{:,.2f}".format(activity.precio).replace(",", "X").replace(".", ",").replace("X", ".") }}</h4>
+            </div>
+            <div>
+                <h3>Descripción</h3>
+                <h4 class="admin-prod-desc">{{activity.descripcion}}</h4>
+            </div>
+            <a href="/editar_producto/{{activity.id}}" ><button class="btn-editar" id="boton-editar">Editar</button></a>
+            <a href="/eliminar_producto/{{activity.id}}"><button class="btn-eliminar">Eliminar</button></a>
+        </div>
+        
+        {% endfor %}
+
+        <h3 style="margin-bottom: 0.625em; margin-top: 1.25em;">Plantillas Digitales</h3>
+        {% for plantilla in productos_plantillas %}
+        <div class="admin-prod">
+            <div class="container-img">
+                <img src="{{url_for('static', filename=plantilla.imagen_principal)}}" alt="">
+            </div>
+            <div>
+                <h3>Nombre</h3>
+                <h4 class="admin-prod-name">{{plantilla.nombre}}</h4>
+            </div>
+            <div>
+                <h3>Precio</h3>
+                <h4>${{ "{:,.2f}".format(plantilla.precio).replace(",", "X").replace(".", ",").replace("X", ".") }}</h4>
+            </div>
+            <div>
+                <h3>Descripción</h3>
+                <h4 class="admin-prod-desc">{{plantilla.descripcion}}</h4>
+            </div>
+            <a href="/editar_producto/{{plantilla.id}}" ><button class="btn-editar" id="boton-editar">Editar</button></a>
+            <a href="/eliminar_producto/{{plantilla.id}}"><button class="btn-eliminar">Eliminar</button></a>
+        </div>
+        
+        {% endfor %}
+
+    </div>
+</section>
+
+
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/administrador.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

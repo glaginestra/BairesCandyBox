@@ -1,0 +1,22 @@
+{%extends 'layout.html'%} {% block title %}BairesCandyBox - Información Útil{%
+endblock %} {% block content %}
+<section id="preguntas-frecuentes">
+  <h1>Información Útil</h1>
+  <div class="container-preguntas">
+    <div class="pregunta">
+      <ul>
+        <li>Todos los productos son totalmente personalizados. No trabajo con stock.</li>
+        <li>Se puede personalizar con cualquier temática.</li>
+        <li>La demora en la entrega es entre 10 y 15 días, y el tiempo puede variar dependiendo de la demanda de esa fecha, asi como tambien de las cantidades que necesites.</li>
+        <li>Antes de realizar la compra, es importante que consultes previamente disponibilidad de la fecha para poder realizar el trabajo.</li>
+        <li>Hago envíos a todo el país, así como también podes pasar a retirar por CABA.</li>
+        <li>Respecto a los envíos, los realizo mediante Andreani o Correo Argentino. Te cotizo el envío mediante la empresa de logística que te quede mejor, y el mismo se adiciona al costo total de la compra que realices.</li>
+        <li>Respecto al embalaje de las cajitas, se embalan semi armadas para evitar roturas en el traslado. Son de fácil armado, te indico cómo debes ensamblarlas y te doy el soporte que necesites en el momento que el producto te llegue.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='/JS/home.js') }}"></script>
+{% endblock %}

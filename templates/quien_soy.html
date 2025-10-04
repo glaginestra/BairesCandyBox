@@ -1,0 +1,29 @@
+{%extends 'layout.html'%} {% block title %}BairesCandyBox - Quien Soy{% endblock
+%} {% block content %}
+<section id="preguntas-frecuentes">
+  <h1>Quien Soy?</h1>
+  <div class="container-preguntas">
+    <p class="quien-soy-texto">
+      Hola! Soy Gladys, mamá, esposa, empleada y emprendedora.<br />
+      Amo las manualidades, y en cada cumpleaños de mis hijos le daba rienda
+      suelta a la imaginación preparando “cositas lindas” para ese día tan
+      especial… <br />Con el correr de los años fui aprendiendo muchas cosas
+      relacionadas con las manualidades, e incursionando en diferentes tipos de
+      souvenirs, golosinas personalizadas, decoración de Candy Bar, y todo lo
+      relacionado en eventos para chicos. <br />Mi emprendimiento pasó por
+      varias etapas, y actualmente estoy con este hermoso proyecto de Souvenirs
+      para eventos infantiles, golosineros y diferentes tipos de boxes que te
+      pueden ser muy útil para cualquier evento infantil que tengas. <br />Si
+      tenes un evento infantil y te gusta agasajar con un hermoso detalle
+      original a tus “peques” invitados, te invito a que navegues por esta
+      página para que puedas ver las diferentes opciones personalizadas.
+    </p>
+    <div class="container-img-animada">
+      <img src="/static/Imagenes/foto-animada.png" alt="" />
+      <h2>Bienvenidos!</h2>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='/JS/home.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{%block title%} BairesCandyBox - Perfil{%endblock%}
+
+{%block content%}
+    <section id="perfil-container">
+        <h2>Perfil</h2>
+        <div class="perfil-info">
+            <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+            <p><strong>Email:</strong> {{ usuario.email }}</p>
+        </div>
+        <a href="/logout" class="btn-logout"><button>Cerrar Sesión</button></a>
+    </section>
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

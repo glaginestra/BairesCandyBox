@@ -1,0 +1,37 @@
+{%extends 'layout.html'%}
+
+{% block title %}BairesCandyBox - Registro{% endblock %}
+
+{% block content %}
+    <section id="register-container">
+        <h2>Registrate</h2>
+        <form action="/register" method="POST" id="register-form">
+            <p>Nombre <span id="error-nombre">{{errores.nombre}}</span></p>
+            <input type="text" name="nombre-registro" id="nombre-registro" placeholder="Ej: Juan Perez" >
+            <p>Email <span id="error-email">{{errores.email}}</span></p>
+            <input type="email" name="email-registro" id="email-registro" placeholder="Ej: juanperez@gmail.com" >
+            <p>Contraseña <span id="error-password">{{errores.password}}</span></p>
+            <input type="password" name="password-registro" id="password-registro" placeholder="Mínimo 8 caracteres" >
+            <p>Confirmar contraseña <span id="error-confirm-password">{{errores.confirm_password}}</span></p>
+            <input type="password" name="confirm-password-registro" id="confirm-password-registro" >
+            <div class="g-recaptcha" data-sitekey="{{site_key}}"></div>
+            <span id="error-recaptcha">{{errores.recaptcha}}</span>
+
+            <button type="submit">REGISTRARSE</button>
+            <p>¿Ya tenés cuenta? <a href="/login">Inicia Sesión</a></p>
+        </form>
+        
+    </section>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>¡Registro exitoso!</h2>
+            <p>Te enviamos un correo para verificar tu cuenta. Para poder iniciar sesión y usar todas las funcionalidades, debés confirmar tu email.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/register.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}

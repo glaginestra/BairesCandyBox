@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block title %}BairesCandyBox - Datos de Contacto{% endblock %}
+
+{% block content %}
+    <section class="container-conf-compra">
+        <div class="info-contacto-compra">
+            <h2>DATOS DE CONTACTO</h2>
+            <form action="/datos-personales-agregar" method="POST" class="formulario-comprar" id="formulario-comprar">
+                <div class="input-box">
+                    <input type="email" name="email-compra" id="email-compra" placeholder=" " value="{{usuario.email}}" >
+                    <label for="email-compra">Email</label>
+                </div>
+                
+                <div class="input-box">
+                    <input type="text" name="dni-compra" id="dni-compra" placeholder=" " oninput="this.value=this.value.replace(/[^0-9]/g, '')" >
+                    <label for="dni-compra">DNI</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="nombre-compra" id="nombre-compra" placeholder=" " oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')">
+                    <label for="nombre-compra">Nombre</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="apellido-compra" id="apellido-compra" placeholder=" " oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')">
+                    <label for="apellido-compra">Apellido</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="telefono-compra" id="telefono-compra" placeholder=" ">
+                    <label for="telefono-compra">Teléfono</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="postal-compra" id="postal-compra" placeholder=" " maxlength="8" oninput="this.value = this.value.replace(/[^0-9]/g, '')" >
+                    <label for="postal-compra">Código Postal</label>
+                    <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi CP</a>
+                </div>
+
+                <label><input type="checkbox" name="otra-persona" id="otra-persona"> Otra persona va a retirar el pedido</label>
+
+                <div id="container-retira">
+                    <div class="input-box">
+                        <input type="text" name="nombre-compra-retira" id="nombre-compra-retira" placeholder=" " oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" >
+                        <label for="nombre-compra-retira">Nombre</label>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" name="apellido-compra-retira" id="apellido-compra-retira" placeholder=" " oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" >
+                        <label for="apellido-compra-retira">Apellido</label>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <select name="provincia-compra" id="provincia-compra">
+                        <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Ríos">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquén">Neuquén</option>
+                        <option value="Río Negro">Río Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Santiago del Estero">Santiago del Estero</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Tucumán">Tucumán</option>
+                    </select>
+                    <label for="provincia-compra" id="label-provincia">Provincia</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="ciudad-compra" id="ciudad-compra" placeholder=" " oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')">
+                    <label for="ciudad-compra">Ciudad</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="barrio-compra" id="barrio-compra" placeholder=" " oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')">
+                    <label for="barrio-compra">Barrio</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" name="calle-compra" id="calle-compra" placeholder=" ">
+                    <label for="calle-compra">Calle</label>
+                </div>
+
+                <div class="container-nro-depto">
+                    <div class="input-box">
+                        <input type="text" name="numero-calle-compra" id="numero-calle-compra" placeholder=" " oninput="this.value=this.value.replace(/[^0-9]/g, '')">
+                        <label for="numero-calle-compra">Número de calle</label>
+                        <div style="display: flex; position: absolute; top: 50%; transform: translateY(-50%); right: 0.4em; justify-content: center; align-items: center; gap: 0.3em;">
+                            <input style="width: 1em; height: 1em;" type="checkbox" name="sin-nro" id="sin-nro">
+                            <p style="color: black; font-size: 0.8em;">Sin número</p>
+
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" name="departamento-compra" id="departamento-compra" placeholder=" ">
+                        <label for="departamento-compra">Departamento (opcional)</label>
+                    </div>
+                </div>
+                <input type="hidden" name="precio_unitario" id="precio_unitario" value="{{producto.precio}}">
+                <input type="hidden" name="cantidad_compra_final" id="cantidad_compra_final" value="{{cantidad}}">
+                <input type="hidden" name="id_producto_compra" id="id_producto_compra" value="{{producto.id}}">
+
+                <button type="submit">FINALIZAR COMPRA</button>
+            </form>
+
+        </div>
+        <div class="info-prod-compra">
+            <h2>DATOS DEL PRODUCTO</h2>
+            <div class="muestra-producto-final">
+                <img src="{{url_for('static', filename = 'uploads/'+ producto.imagen_principal)}}" alt="">
+                <h3 class="muestra-producto-final-nombre">{{producto.nombre}}</h3>
+                <h3>x{{cantidad}}</h3>
+            </div>
+            <div class="muestra-precio-total">
+                <h2>TOTAL</h2>
+                <h2>${{ "{:,.2f}".format(total).replace(",", "X").replace(".", ",").replace("X", ".") }}</h2>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/confirmar_compra.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}
+

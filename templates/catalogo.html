@@ -1,0 +1,56 @@
+{%extends 'layout.html'%} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='CSS/catalogo.css') }}"
+/>
+{% endblock %} {% block title %}BairesCandyBox - {{tipo}}{% endblock %} {% block
+content %}
+<section id="catalogo">
+  <h2 class="titulo-catalogo">{{tipo}}</h2>
+  <div class="container-catalogo">
+    {% if texto %}
+    <p class="no-hay-producto">No hay productos disponibles.</p>
+    {% else %} {% for producto in productos %}
+    <div class="card-producto">
+      <a href="/producto/{{producto.id}}">
+        <img
+          src="{{url_for('static', filename='uploads/'+producto.imagen_principal)}}"
+          alt="{{producto.nombre}}"
+          title="{{producto.nombre}}"
+        />
+        <div class="card-producto-texto">
+          <p class="producto-nombre">{{producto.nombre}}</p>
+          <p class="producto-precio">
+            ${{ "{:,.2f}".format(producto.precio).replace(",", "X").replace(".",
+            ",").replace("X", ".") }}
+          </p>
+          <button>Ver Producto</button>
+        </div>
+      </a>
+    </div>
+    {% endfor %} {% endif %}
+  </div>
+</section>
+<div
+  id="loader"
+  style="
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 9999;
+    text-align: center;
+    padding-top: 12.5em;
+  "
+>
+  <div class="spinner"></div>
+  <p>Cargando...</p>
+</div>
+
+{%endblock%} {% block scripts %}
+<script src="{{ url_for('static', filename='JS/catalogo.js') }}"></script>
+<script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

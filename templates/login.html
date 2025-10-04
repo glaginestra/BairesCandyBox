@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+
+{% block title %}BairesCandyBox - Iniciar Sesión{% endblock %}
+
+{% block content %}
+
+<section id="login-container">
+    <h2>Inicia Sesión</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/login" method="POST" id="login-form" autocomplete="on">
+        <p>Email</p>
+        <input type="email" name="email-login" id="email-login"  autocomplete="username" >
+        <p>Contraseña</p>
+        <input type="password" name="password-login" id="password-login" autocomplete="current-password" >
+        <a href="/olvido_password" class="olvi">¿Olvidaste tu contraseña?</a>
+        <p id="error-alert">{{ errores.email or errores.password or errores.login }}</p>
+        <button type="submit">INICIAR SESIÓN</button>
+        <p>¿No tenés cuenta? <a href="/register">Crear una</a></p>
+    </form>
+</section>
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='/JS/login.js') }}"></script>
+{% endblock %}

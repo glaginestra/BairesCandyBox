@@ -1,0 +1,75 @@
+{%extends 'layout.html'%}
+
+{% block title %}BairesCandyBox - Usuarios Registrados{% endblock %}
+
+{% block content %}
+    <section id="pedidos_admin">
+        <h1>Pedidos</h1>
+        <div class="container-pedidos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Tel</th>
+                        <th>Calle</th>
+                        <th>Nro</th>
+                        <th>Depa</th>
+                        <th>Barrio</th>
+                        <th>Cdad</th>
+                        <th>Prov</th>
+                        <th>CP</th>
+                        <th>Retira otro</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Total</th>
+                        <th>Productos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pedido in pedidos %}
+                    <tr>
+                        <td>{{ pedido.usuario_id }}</td>
+                        <td>{{ pedido.nombre }}</td>
+                        <td>{{ pedido.apellido }}</td>
+                        <td>{{ pedido.email }}</td>
+                        <td>{{ pedido.telefono }}</td>
+                        <td>{{ pedido.calle }}</td>
+                        <td>{{ pedido.numero_calle }}</td>
+                        <td>{{ pedido.departamento or '-' }}</td>
+                        <td>{{ pedido.barrio }}</td>
+                        <td>{{ pedido.ciudad }}</td>
+                        <td>{{ pedido.provincia }}</td>
+                        <td>{{ pedido.codigo_postal }}</td>
+                        <td>{{ 'Sí' if pedido.retira_otro else 'No' }}</td>
+                        <td>{{ pedido.nombre_retira if pedido.retira_otro else pedido.nombre }}</td>
+                        <td>{{ pedido.apellido_retira if pedido.retira_otro else pedido.apellido }}</td>
+                        <td>${{ pedido.total }}</td>
+                        <td>
+                            <ul>
+                            {% for item in pedido.productos %}
+                                <li>{{ item.producto.nombre }} x{{ item.cantidad }} - ${{ item.precio_unitario }}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <form action="{{ url_for('eliminar_pedido', pedido_id=pedido.id) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este pedido?');">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='/JS/home.js') }}"></script>
+{% endblock %}

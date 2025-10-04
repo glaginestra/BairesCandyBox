@@ -1,0 +1,51 @@
+{%extends 'layout.html'%}
+
+{% block extra_css %}    
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/administrador.css') }}"> 
+{% endblock %}
+
+
+{% block title %}BairesCandyBox - Administración{% endblock %}
+
+
+{% block content %}
+<section id="administrador-agregar">
+    <h2>Agregar Producto</h2>
+    <div class="container-administrador-agregar">
+        <form action="/agregar_producto" method="POST" enctype="multipart/form-data">
+            <h3>Nombre del Producto</h3>
+            <input type="text" name="nombre" id="nombre">
+            
+            <h3>Precio</h3>
+            <input type="number" name="precio" id="precio" min="1">
+            
+            <h3>Descripción</h3>
+            <textarea name="descripcion" id="descripcion"></textarea>
+
+            <h3>Categoría del Producto</h3>
+            <select name="categoria" id="categoria">
+                <option value="1">Candy Box</option>
+                <option value="2">Activity Box</option>
+                <option value="3">Plantillas Digitales</option>
+            </select>
+
+            <h3>Imagen Principal</h3>
+            <input type="file" name="imagen_principal" accept="image/*" required>
+
+            <h3>Imagenes Secundarias</h3>
+            <input type="file" name="imagenes_secundarias" id="imagenes_secundarias" multiple accept="image/*" >
+
+            <button type="submit">Agregar producto</button>
+        </form>
+        
+
+    </div>
+</section>
+
+
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/administrador.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}

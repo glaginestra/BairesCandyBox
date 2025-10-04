@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block title %}BairesCandyBox - Contactanos{% endblock %}
+
+{% block content %}
+    <section id="contacto">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="container-form">
+            <div class="mail">
+                <h2>Envianos un Mail</h2>
+                <form action="/contacto" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+
+            </div>
+            <div class="contactos">
+                <h2>Contactanos</h2>
+                <ul>
+                    <li><span><img src="{{url_for('static', filename='Imagenes/Iconos/ubicacion.svg')}}" alt=""></span> San Cristóbal, Capital Federal, Buenos Aires</li>
+                    <li><span><img src="{{url_for('static', filename='Imagenes/Iconos/email.png')}}" alt=""></span> bairescandybox@gmail.com</li>
+                </ul>
+                <div class="navegacion-redes">
+                    <h2>Redes Sociales</h2>
+                    <div class="container-nav-red">
+                        <div class="red-social insta">
+                        <a
+                            href="https://www.instagram.com/bairescandybox/"
+                            target="_blank"
+                        >
+                            <img
+                            src="{{url_for('static', filename='Imagenes/Redes/instagram.svg')}}"
+                            alt=""
+                            />
+                        </a>
+                        </div>
+                        <div class="red-social pinterest">
+                        <a href="https://www.pinterest.com/bairescandybox" target="_blank">
+                            <img
+                            src="{{url_for('static', filename='Imagenes/Redes/pinterest.svg')}}"
+                            alt=""
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+            <div class="triangulo"></div>
+        </div>
+    </section>
+
+{%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+{% endblock %}
+
+<!-- 722604577637-adlun6d8vlvg9hu8h0p23gukd9p90hl5.apps.googleusercontent.com -->
